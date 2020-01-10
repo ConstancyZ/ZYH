@@ -1,0 +1,16 @@
+server:
+  port: 9000
+spring:  application:    name: woniu58-zuul
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaserver9001.com:9001/eureka/ #,http://eurekaserver9001.com:9001/eureka/,http://eurekaserver9002.com:9002/eureka/
+  instance:
+    instance-id: SpringCloud-zuul-9000  #配置中心显示出来的微服务名称
+    prefer-ip-address: true #显示访问url
+    
+zuul:
+  ignored-services: woniu58-provider #隐藏指定微服务的名字,隐藏后就只能通过下面路径abc访问  "*"隐藏所有微服务的名字  routes:    product:    #路由的名字，名字是程序员自定义的，区分不同的微服务
+      service-id: woniu58-provider #要调用的微服务的name
+      path: /abc/**

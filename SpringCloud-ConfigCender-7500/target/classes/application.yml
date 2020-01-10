@@ -1,0 +1,18 @@
+server:
+  port: 7500
+
+spring:
+  application:
+    name: woniucloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/constacncy/woniu58.git  #仓库地址
+          #search-paths: config-repo      #仓库下的相对地址，可以有多个，用逗号隔开
+          username: 13882985800   #账号
+          password: lovegn2011314    #密码
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eurekaserver9001.com:9001/eureka/ #,http://eurekaserver9001.com:9001/eureka/,http://eurekaserver9002.com:9002/eureka/

@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: woniucloud-turbine
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaserver9001.com:9001/eureka/ #,http://eurekaserver9001.com:9001/eureka/,http://eurekaserver9002.com:9002/eureka/
+  instance:
+    instance-id: SpringCloud-turbine-8888  #配置中心显示出来的微服务名称
+    prefer-ip-address: true #显示访问url
+
+turbine:
+  #配置监控服务的列表，表明监控哪些服务多个使用","分割
+  app-config: WONIU58-PROVIDER 
+  cluster-name-expression: new String("default")   #指定要监控默认集群
+  combine-host-port: true   #通过端口来区分同一个服务器上的不同微服务
