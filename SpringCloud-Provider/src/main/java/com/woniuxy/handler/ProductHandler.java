@@ -37,6 +37,8 @@ public class ProductHandler {
 	}
 	@RequestMapping(value="/product/all",method=RequestMethod.GET)
 	public List<Product> all() {
+
+		System.out.println("111111");
 		return productService.all();
 		
 	}
